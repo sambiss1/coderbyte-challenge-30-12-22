@@ -9,7 +9,6 @@ function WordSplit(strArr) {
         if (splitMainWordArray.length > 0) {
             splitMainWordArray.forEach((word) => {
                 let joinedWord = firstWord + word;
-                // console.log({joinedWord});
                 let reversedWord = [joinedWord].reverse().toString();
                 console.log({ reversedWord });
                 if (joinedWord === firstSubword || reversedWord === firstSubword) {

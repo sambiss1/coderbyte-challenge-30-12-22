@@ -14,12 +14,11 @@ function WordSplit(strArr: string[]) {
 
             splitMainWordArray.forEach((word: string) => {
 
-                let joinedWord: string = firstWord + word
-                // console.log({joinedWord});
+                let joinedWord: string = firstWord + word;
 
-                let reversedWord = [joinedWord].reverse().toString()
-                
-                console.log({reversedWord});
+                let reversedWord: string = [joinedWord].reverse().toString()
+
+                console.log({ reversedWord });
 
                 if (joinedWord === firstSubword || reversedWord === firstSubword) {
                     splitedWord = "" + firstWord + "," + word + ""
