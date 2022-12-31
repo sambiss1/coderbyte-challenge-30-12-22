@@ -1,22 +1,22 @@
 function wildCardCharacters(str: string) {
     // code goes here
-    let cardCharactersArray = str.split(" ");
+    let cardCharactersArray: string[] = str.split(" ");
     const patternReader = (pattern: any) => {
-        let capture = 1;
+        let shot = 1;
         const source = pattern
             .replace(/([+*$])(?:\{(\d+)\})?/g, (match: string[], rule: string, repeat = 3) => {
                 switch (rule) {
                     case "+":
                         return "[a-z]";
                     case "*":
-                        return `(.)\\${capture++}{${repeat - 1}}`;
+                        return `(.)\\${shot++}{${repeat - 1}}`;
                     case "$":
                         return "\\d";
                 }
             })
-            .replace(/(.+?)\1+/g, (match: string[], capture: string[]) => {
-                const rle = `(?:${capture}){${match.length / capture.length}}`;
-                return rle.length < match.length ? rle : match;
+            .replace(/(.+?)\1+/g, (match: string[], shot: string[]) => {
+                const editPattern = `((?:${shot}){${match.length / shot.length}})`;
+                return editPattern.length < match.length ? editPattern : match;
             });
         return new RegExp(`^${source}$`);
     }
