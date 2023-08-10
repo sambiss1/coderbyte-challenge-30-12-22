@@ -25,16 +25,7 @@ function StringReduction(str: string) {
     while (array.length > i) {
         array.length
     }
-
     return array.length;
-
-
 }
-
-
-
-
-// }
-
 
 console.log(StringReduction("abcabc"));
